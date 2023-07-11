@@ -6,5 +6,11 @@ class Rectangle(Figure):
         super().__init__(name)
         self.width = width
         self.length = length
-        self.PERIMETER = 2 * (self.width + self.length)
-        self.AREA = self.width * self.length
+        self.perimeter = self.calculate_perimeter()
+        self.area = self.calculate_area()
+
+    def calculate_perimeter(self):
+        return 2 * (self.width + self.length)
+
+    def calculate_area(self):
+        return self.width * self.length

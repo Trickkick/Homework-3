@@ -4,19 +4,19 @@ from src.Triangle import Triangle
 from src.Rectangle import Rectangle
 
 square = Square(name="Квадрат", side=4)
-print(f"Площадь фигуры {square.NAME} равна {square.AREA}")
+print(f"Площадь фигуры {square.name} равна {square.area}")
 
 square2 = Square(name="Квадратик", side=2)
-print(f"Площадь фигуры {square2.NAME} равна {square2.AREA}")
+print(f"Площадь фигуры {square2.name} равна {square2.area}")
 
 circle = Circle(name="Круг", radius=5)
-print(f"Площадь фигуры {circle.NAME} равна {circle.AREA}")
+print(f"Площадь фигуры {circle.name} равна {circle.area}")
 
 triangle = Triangle(name="Треугольник", a=3, b=4, c=5)
-print(f"Площадь фигуры {triangle.NAME} равна {triangle.AREA}")
+print(f"Площадь фигуры {triangle.name} равна {triangle.area}")
 
 rectangle = Rectangle(name="Прямоугольник", width=3, length=4)
-print(f"Площадь фигуры {rectangle.NAME} равна {rectangle.AREA}")
+print(f"Площадь фигуры {rectangle.name} равна {rectangle.area}")
 
-print(f"Площадь фигуры {circle.NAME} равна {circle.AREA}, если добавить к ней площадь фигуры {square.NAME}, которая "
-      f"равна {square.AREA}, то получится {circle.add_area(square)}")
+print(f"Площадь фигуры {circle.name} равна {circle.area}, если добавить к ней площадь фигуры {square.name}, которая "
+      f"равна {square.area}, то получится {circle.add_area(square)}")
