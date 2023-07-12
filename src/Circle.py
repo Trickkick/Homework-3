@@ -4,14 +4,22 @@ from src.Figure import Figure
 
 
 class Circle(Figure):
-    def __init__(self, name, radius):
+    def __init__(self, radius, name="Круг"):
+        if type(radius) not in [int, float]:
+            raise TypeError("Радиус круга должен быть числом, а имя строкой")
+        if radius <= 0:
+            raise ValueError("Недопустимые значения")
         super().__init__(name)
-        self.radius = radius
-        self.perimeter = self.calculate_perimeter()
-        self.area = self.calculate_area()
+        self._radius = radius
 
-    def calculate_perimeter(self):
-        return 2 * math.pi * self.radius
+    @property
+    def radius(self):
+        return self._radius
 
-    def calculate_area(self):
-        return math.pi * self.radius ** 2
+    @property
+    def perimeter(self):
+        return 2 * math.pi * self._radius
+
+    @property
+    def area(self):
+        return math.pi * self._radius ** 2

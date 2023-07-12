@@ -2,15 +2,27 @@ from src.Figure import Figure
 
 
 class Rectangle(Figure):
-    def __init__(self, name, width, length):
+    def __init__(self, width, length, name="Прямоугольник"):
+        if (type(width) not in [int, float]) or (type(length) not in [int, float]):
+            raise TypeError("Длина и ширина прямоугольника должны быть числами, а имя строкой")
+        if width <= 0 or length <= 0:
+            raise ValueError("Недопустимые значения")
         super().__init__(name)
-        self.width = width
-        self.length = length
-        self.perimeter = self.calculate_perimeter()
-        self.area = self.calculate_area()
+        self._width = width
+        self._length = length
 
-    def calculate_perimeter(self):
-        return 2 * (self.width + self.length)
+    @property
+    def width(self):
+        return self._width
 
-    def calculate_area(self):
-        return self.width * self.length
+    @property
+    def length(self):
+        return self._length
+
+    @property
+    def perimeter(self):
+        return 2 * (self._width + self._length)
+
+    @property
+    def area(self):
+        return self._width * self._length
